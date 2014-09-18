@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>人脸检测识别</title>
+<link href="css/face.css" media="all" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript">
+	function jsProcess(rel){
+		var confidence = rel;
+		console.log(rel);
+	}
+</script>
+<script type="text/javascript">
+	var flashvars = {};  
+    var params = {wmode: "transparent",allowScriptAccess:"always"}; 
+    var attributes = {};
+	var servlet = "http://localhost:8983/AnYunFaceRecognizerWeb/OnlineFaceRecognize";
+	var uid = "5002000000000000000001000002";
+    swfobject.embedSWF("FaceDetector_Camera.swf?servlet="+servlet+"&uid="+uid, "cam", "320", "240", "9.0.0", "expressInstall.swf", flashvars, params, attributes);
+</script>
+</head>
+<body>
+	<div id="cam"></div>
+</body>
+</html>
